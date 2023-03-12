@@ -8,7 +8,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-.App {
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .Navbar {
   background-color: rgb(223, 138, 47);
@@ -37,7 +40,7 @@ a {
 }
 .productsLayout {
   display: grid;
-  grid-template-columns: 200px 1000px;
+  grid-template-columns: 1fr 5fr;
   padding: 20px 20px 20px 10px;
 }
 .categories {
@@ -100,6 +103,7 @@ a {
   background-color: rgb(223, 138, 47);
   color: white;
   padding: 7px;
+  cursor: pointer;
 }
 .productCard {
   display: flex;
@@ -142,4 +146,57 @@ background-color: rgb(223, 138, 47);
 width: 120px;
 cursor: pointer;
 color: aliceblue;
+}
+.welcome-section h1,
+.welcome-section p {
+  text-align: center;
+  color: rgb(64, 64, 132);
+  padding: 20px 0;
+}
+
+.welcome-section li{
+  display: flex;
+
+  flex-direction: column;
+  
+  margin: 20px 0;
+  color: rgb(26, 26, 31);
+  text-align: center;
+  font-weight: bold;
+}
+
+.products-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.products-wrapper .image {
+  background-color: #f3f3f3;
+  transition: all 0.4s linear;
+}
+
+.products-wrapper .image:hover {
+  box-shadow: 0px 1px 12px 1px rgba(64,64,132,1);
+}
+.products-wrapper .image img{
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  padding: 50px 0;
+  margin-top: 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width:768px) {
+.products-wrapper,
+.productsContainer {
+  grid-template-columns: 1fr;
+}
+
+  
 }

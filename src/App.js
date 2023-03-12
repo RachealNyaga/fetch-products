@@ -8,7 +8,8 @@ import Products from "./components/Products";
 import ProductsDisplay from "./components/ProductsDisplay";
 import { products } from "./data";
 import { ProductsProvider } from "./context"
-
+import Cart from "./components/Cart"
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -23,9 +24,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
+      <div className="container">
       <ProductsProvider>
         <Routes>
+        <Route
+            path="/"
+            element={<Home />}
+          />
           <Route path={"/products"} element={<Products />}>
             <Route
               index
@@ -47,8 +52,15 @@ function App() {
             path="/products/:id"
             element={<OneProduct />}
           />
+          <Route
+            path="/cart"
+            element={<Cart />}
+          />
         </Routes>
-      </ProductsProvider>
+        </ProductsProvider>
+      </div>
+      
+      <Footer />
     </div>
   );
 }

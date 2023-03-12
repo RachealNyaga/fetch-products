@@ -5,6 +5,7 @@ export const ProductsContext = createContext()
 export function ProductsProvider({ children }) {
     let [products, setProducts] = useState([]) 
     let [categories, setCategories] = useState([])
+    let [cartItems, setCart] = useState([])
 
     function fetchProducts() {
         fetch("https://dummyjson.com/products")
@@ -25,7 +26,7 @@ export function ProductsProvider({ children }) {
     },[])
 
     return (
-        <ProductsContext.Provider value={{ categories: categories, products: products}}>{children}</ProductsContext.Provider>
+        <ProductsContext.Provider value={{ categories: categories, products: products, cart: {cartItems:cartItems, setCart: setCart}}}>{children}</ProductsContext.Provider>
     )
 }
 
